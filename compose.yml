@@ -1,0 +1,30 @@
+services:
+  php:
+    image: ghcr.io/rpe1313/docker-php8.3-nginx/php:latest
+    volumes:
+      - ./www:/var/www/html
+      - php-sock:/var/run/php
+    networks:
+      - appnet
+    restart: unless-stopped
+
+  nginx:
+    image: ghcr.io/rpe1313/docker-php8.3-nginx/nginx:latest
+    ports:
+      - "0.0.0.0:80:80"   # Explicit IPv4 only on the host
+    volumes:
+      - ./www:/var/www/html:ro
+      - php-sock:/var/run/php
+    depends_on:
+      - php
+    networks:
+      - appnet
+    restart: unless-stopped
+
+networks:
+  appnet:
+    driver: bridge
+    enable_ipv6: false
+
+volumes:
+  php-sock:
