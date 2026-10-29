@@ -1,5 +1,5 @@
-# PHP 8.3 + Nginx Docker \
-# (IPv4 only, port 80, Unix socket, nobody:nogroup)
+# PHP 8.3 + Nginx Docker 
+(IPv4 only, port 80, Unix socket, nobody:nogroup)
 
 A minimal, production-oriented setup.
 
