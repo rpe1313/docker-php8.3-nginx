@@ -1,6 +1,6 @@
 # PHP 8.3 + Nginx Docker (IPv4 only, port 80, Unix socket, nobody:nogroup)
 
-A minimal, production-oriented setup that you can build yourself and publish to GitHub Container Registry (ghcr.io).
+A minimal, production-oriented setup.
 
 ## Features
 
